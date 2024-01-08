@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="Style.css">
+    <title>Blackjack Game</title>
+</head>
+<body>
+    <main>
+            <div class = "dealer">        
+                <p class = "dealerPoints"></p>
+            </div>
+
+            <button class = "startBtn">Start Game!</button>
+            <button class = "playBtn" value = "Hit">HIT</button>
+            <button class = "playBtn" value = "Stand">Stand</button>
+            <button class = "playBtn" value = "Reset">Play Again</button><br>
+            <button class = "playBtn" value = "DoubleDown" disabled="true">Double Down</button>
+            <p class = "endGame"></p>
+
+            <div class="player">
+                <p class = "playerPoints"></p>
+                <div class="betPanel">
+                    
+                <span class="labelBet" style="visibility: hidden;">Bet tokens:</span> <input type="number" class="bet" step="5" min="5" placeholder = "5" style="visibility: hidden;"><button class = "playBtn" value="Bet" style="visibility: hidden;">BET</button><button class = "playBtn" value="noBet" visibility="hidden">NO BET</button>
+                <p class = "playerTokens" style="visibility: hidden;"></p>
+                </div>
+            </div>
+        
+    </main>
+    <script src="Blackjack.js"></script>
+</body>
+</html>
