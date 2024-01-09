@@ -30,14 +30,16 @@ main{
 .endGame{
     width: 100%;
     text-align: center;
-    font-size: 150%;
-    color:white
+    font-size: 2em;
+    color:white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .playerTokens{
     font-size: 2em;
     color: #00BDBD;
     margin-top: 5px;
-    
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
     
 }
 .dealer, .player{
@@ -62,7 +64,7 @@ main{
     padding: 20px;
     
 }
-.cardDealer:hover, .cardPlayer:hover {
+.cardDealer:hover, .cardPlayer:hover, .playerPoints:hover, .dealerPoints:hover {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px
 }
 .cardBlank{
@@ -98,8 +100,11 @@ img{
 }
 
 .playerPoints, .dealerPoints{
+    margin-top: 2%;
     font-size: 2em;
     color:white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    
 }
 .betPanel{
     display: flex;
@@ -127,6 +132,7 @@ img{
     border-radius: 5px;
     border-width: 5px;
     transition: transform 0.3s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
 }
 

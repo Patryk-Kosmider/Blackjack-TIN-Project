@@ -126,7 +126,16 @@ noBetBtn.addEventListener("click", () => {
     playerTokens.style.height = "auto";
     betPanel.style.display = "-webkit-box";
     
-    const marginLeftValue = window.innerWidth < 1000 ? "15%" : "32.5%";
+    const windowWidth = window.innerWidth;
+    let marginLeftValue;
+
+    if (windowWidth < 1000) {
+    marginLeftValue = "15%";
+    } else if (windowWidth < 1200) {
+    marginLeftValue = "20%";
+    } else {
+    marginLeftValue = "30.5%";
+    }
     betPanel.style.marginLeft = marginLeftValue;
 
     HandStartDealer();
@@ -157,8 +166,18 @@ BetBtn.addEventListener("click", ()=>{
         labelBet.innerHTML = "Bet Tokens: " + BetInput.value;
         betPanel.style.display = "block";
         betPanel.style.display = "-webkit-box";
-        const marginLeftValue = window.innerWidth < 1500 ? "15%" : "32.5%";
+        
+        const windowWidth = window.innerWidth;
+        if (windowWidth < 1000) {
+        marginLeftValue = "15%";
+        } else if (windowWidth < 1200) {
+        marginLeftValue = "20%";
+        } else {
+        marginLeftValue = "30.5%";
+        }
         betPanel.style.marginLeft = marginLeftValue;
+
+
         HandStartDealer();
         HandStartPlayer();
         HandStartPlayer();
@@ -303,6 +322,7 @@ function CountPoints(){
         PlayerPoints.innerHTML = "Player Hand: " + playerPoints;
     } else {
         endGame.innerHTML = "You win, blackjack";
+        endGame.style.color = "rgb(0, 255, 17)";
         CheckBetWin();
         HitBtn.disabled = true;
         StandBtn.disabled = true;
@@ -393,9 +413,10 @@ function Hit(){
     let card = document.createElement("img");
     card.setAttribute("src", "./cards/" + cardDeck[random].toString() + ".png")
     card.setAttribute("class", "cardPlayer");
+    DoubleBtn.disabled = true;
     playerTable.appendChild(card);
-    cardDeck.splice(random, 1)
-    CountPoints()
+    cardDeck.splice(random, 1);
+    CountPoints();
 }
 
 // Change the second card of dealer hand (which we dont know what is under it) and trigger check points
@@ -440,14 +461,17 @@ function Stand(dealerPoints, playerPoints){
     DoubleBtn.disabled = true;
     ResetBtn.disabled = false;
     endGame.innerHTML = "Dealer blackjack, you lose";
+    endGame.style.color = "red";
 } else if (dealerPoints > 21){
     HitBtn.setAttribute("disabled", true);
     StandBtn.setAttribute("disabled",true);
     DoubleBtn.disabled = true;
     ResetBtn.disabled = false;
     endGame.innerHTML = "You win";
+    endGame.style.color = "rgb(0, 255, 17)"
 } else if(dealerPoints > playerPoints){
     endGame.innerHTML = "You lose";
+    endGame.style.color = "red";
     ResetBtn.disabled = false;
     DoubleBtn.disabled = true;
     HitBtn.setAttribute("disabled", true);
