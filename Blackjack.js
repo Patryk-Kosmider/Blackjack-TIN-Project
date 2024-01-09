@@ -157,7 +157,7 @@ BetBtn.addEventListener("click", ()=>{
         labelBet.innerHTML = "Bet Tokens: " + BetInput.value;
         betPanel.style.display = "block";
         betPanel.style.display = "-webkit-box";
-        const marginLeftValue = window.innerWidth < 1500 ? "15%" : "45%";
+        const marginLeftValue = window.innerWidth < 1500 ? "15%" : "32.5%";
         betPanel.style.marginLeft = marginLeftValue;
         HandStartDealer();
         HandStartPlayer();
