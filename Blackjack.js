@@ -318,6 +318,7 @@ function CountPoints(){
     ResetBtn.disabled = false;
     HitBtn.disabled = true;
     StandBtn.disabled = true;
+    endGame.style.color = "red";
     } else if (playerPoints < 21){
         PlayerPoints.innerHTML = "Player Hand: " + playerPoints;
     } else {
