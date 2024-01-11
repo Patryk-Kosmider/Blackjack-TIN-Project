@@ -322,6 +322,7 @@ function CountPoints(){
     } else if (playerPoints < 21){
         PlayerPoints.innerHTML = "Player Hand: " + playerPoints;
     } else {
+        PlayerPoints.innerHTML = "Player Hand: " + playerPoints;
         endGame.innerHTML = "You win, blackjack";
         endGame.style.color = "rgb(0, 255, 17)";
         CheckBetWin();
@@ -510,10 +511,9 @@ function CheckBetWin(doubleDown){
             if(doubleDown == true){
                 const currentBet = parseInt(BetInput.value);
                 const newTokens = parseInt(localStorage.getItem("tokens"));
-                const sum = newTokens + (currentBet * 2);
+                const sum = newTokens + (currentBet * 3);
                 localStorage.setItem("tokens", parseInt(sum));
-            } else {
-            
+            } else {        
                 const currentBet = parseInt(BetInput.value);
                 const newTokens = parseInt(localStorage.getItem("tokens"));
                 const sum = newTokens + (currentBet * 3);
