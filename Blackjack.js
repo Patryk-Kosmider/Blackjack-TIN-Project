@@ -516,7 +516,7 @@ function CheckBetWin(doubleDown){
         } else if(endGame.innerHTML == "You win, blackjack"){
             console.log("blackjack");
             if(doubleDown == true){
-                const currentBet = parseInt(BetInput.value);
+                const currentBet = parseInt(BetInput.value) * 2;
                 const newTokens = parseInt(localStorage.getItem("tokens"));
                 const sum = newTokens + (currentBet * 3);
                 localStorage.setItem("tokens", parseInt(sum));
