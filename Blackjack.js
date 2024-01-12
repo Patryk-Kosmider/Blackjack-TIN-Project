@@ -320,7 +320,8 @@ function CountPoints(){
     // possible sceniaros after counting player points
 
     if(playerPoints > 21){
-    endGame.innerHTML = "You lose: " + playerPoints ;
+    endGame.innerHTML = "You lose: " + playerPoints;
+    PlayerPoints.innerHTML = "Player Hand: " + playerPoints;
     ResetBtn.disabled = false;
     HitBtn.disabled = true;
     StandBtn.disabled = true;
