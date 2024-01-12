@@ -191,8 +191,10 @@ BetBtn.addEventListener("click", ()=>{
  DoubleBtn.addEventListener("click", () =>{
     const currentBet = parseInt(BetInput.value);
     const newTokens = parseInt(localStorage.getItem("tokens"));
-    currenTokens = newTokens - currentBet;
-    localStorage.setItem("tokens", currenTokens);
+    currentTokens = newTokens - currentBet;
+    if(currenTokens > 0) {
+    localStorage.setItem("tokens", currentTokens);
+    labelBet.innerHTML = "Bet Tokens: " + currentBet * 2;
     playerTokens.innerHTML = "Tokens: " + parseInt(localStorage.getItem("tokens"));
     doubleDown = true;
     Hit();
@@ -204,6 +206,10 @@ BetBtn.addEventListener("click", ()=>{
         DoubleBtn.disabled = true;
         HitBtn.setAttribute("disabled", true);
         StandBtn.setAttribute("disabled",true);
+    }
+    } else {
+        alert("Not enough tokens")
+        DoubleBtn.disabled = true;
     }
  })
 
@@ -314,7 +320,7 @@ function CountPoints(){
     // possible sceniaros after counting player points
 
     if(playerPoints > 21){
-    PlayerPoints.innerHTML = "You lose: " + playerPoints ;
+    endGame.innerHTML = "You lose: " + playerPoints ;
     ResetBtn.disabled = false;
     HitBtn.disabled = true;
     StandBtn.disabled = true;
